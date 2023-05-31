@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <h2>CycleWise: Navigate Bike/Scotter Prices with Confidence</h2>
+  <div class="container">
+    <form action='/prediction' method='post'>
+      <label for="CC">Engine Size (Enter 0 for Electric bikes)</label>
+      <input type="number" name="CC" step="any" min=0 max=3000>
+      <label for="mileage">Desired Mileage for your Bike</label>
+      <input type="number" name="mileage" step="any" min=5 max=400>
+      <label for="type_of_bike">Select Bike Type</label>
+      <select name="bike_type">
+        <option selected disabled>Select from the given options</option>
+        <option value="Electric bike">Electric bike</option>
+        <option value="Petrol bike">Petrol bike</option>
+      </select>
+      <label for="weight">Weight of the Bike in kilograms (Typically around 100 kg)</label>
+      <input type="number" name="weight" step="any" min=50 max=500>
+      <label for="acceleration">Desired Acceleration Speed (Lower is better)</label>
+      <input type="number" name="acceleration" step="any" min=1 max=15>
+      <label for="top_speed">Maximum Speed in km/h </label>
+      <input type="number" name="top_speed" step="any" min=20 max=250>
+      <button type="submit" class="search-button">Calculate Price</button>
+      <h3>{{ prediction_text }}</h3>
+
+    </form>
+
+  </div>
+</body>
+
+</html>
