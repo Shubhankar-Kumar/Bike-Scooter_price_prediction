@@ -1,0 +1,6 @@
+[build]
+command = "python app.py"  # Update with the command to start your Flask app
+publish = "app.py"  # Update with the path to your Flask app files
+
+[build.environment]
+PYTHON_VERSION = "3.10"  # Update with the desired Python version
